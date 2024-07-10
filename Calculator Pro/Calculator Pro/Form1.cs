@@ -23,6 +23,20 @@ namespace Calculator_Pro
 
         private History history = new History();
 
+        private void Clicknum(string num)
+        {
+            if (textBox_output.Text.Contains("="))
+            {
+                textBox_output.Text = "";
+                textBox_input.Text = num;
+            }
+            else
+            {
+                textBox_input.Text += num;
+            }
+        }
+
+
 
         public Form1()
         {
@@ -102,11 +116,15 @@ namespace Calculator_Pro
                         arrOp.RemoveAt(i);
                         i--;
                     }
+<<<<<<< HEAD
 
                 }
 
                 }    // 변동사항
 
+=======
+                }
+>>>>>>> main
                 double result = arrNum[0];
                 for (int i = 0; i < arrOp.Count; i++)
                 {
@@ -140,47 +158,51 @@ namespace Calculator_Pro
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += "1";
+            Clicknum("1");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += "2";
+            Clicknum("2");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += "3";
+            Clicknum("3");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += "4";
+            Clicknum("4");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += "5";
+            Clicknum("5");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += "6";
+            Clicknum("6");
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             textBox_input.Text = textBox_input.Text += "7";
+=======
+            Clicknum("7");
+>>>>>>> main
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += "8";
+            Clicknum("8");
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += "9";
+            Clicknum("9");
         }
 
         private void button0_Click(object sender, EventArgs e)
@@ -191,7 +213,7 @@ namespace Calculator_Pro
             }
             else
             {
-                textBox_input.Text += "0";
+                Clicknum("0");
             }
 
         }
