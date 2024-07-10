@@ -78,7 +78,7 @@ namespace Calculator_Pro
                 // Perform the calculation with operator precedence
                 for (int i = 0; i < arrOp.Count; i++)
                 {
-                    if (arrOp[i] == '¡¿' || arrOp[i] == '¡À')
+                    if (arrOp[i] == '¡¿' || arrOp[i] == '¡À' || arrOp[i] == '%')
                     {
                         double tempResult = arrNum[i];
                         switch (arrOp[i])
@@ -88,6 +88,9 @@ namespace Calculator_Pro
                                 break;
                             case '¡À':
                                 tempResult /= arrNum[i + 1];
+                                break;
+                            case '%':
+                                tempResult %= arrNum[i + 1];
                                 break;
                         }
                         arrNum[i] = tempResult;
@@ -222,11 +225,8 @@ namespace Calculator_Pro
 
         private void button14_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox_input.Text))
-            {
-                textBox_output.Text += textBox_input.Text + "%";
-                textBox_input.Text = "";
-            }
+            textBox_output.Text += textBox_input.Text + "%";
+            textBox_input.Text = "";
         }
 
         private void button17_Click(object sender, EventArgs e)
