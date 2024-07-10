@@ -98,7 +98,7 @@ namespace Calculator_Pro
                         arrOp.RemoveAt(i);
                         i--;
                     }
-                }
+                }    // 변동사항
                 double result = arrNum[0];
                 for (int i = 0; i < arrOp.Count; i++)
                 {
@@ -162,7 +162,7 @@ namespace Calculator_Pro
 
         private void button7_Click(object sender, EventArgs e)
         {
-            textBox_input.Text = textBox_input.Text += "7";
+            textBox_input.Text += "7";
         }
 
         private void button8_Click(object sender, EventArgs e)
