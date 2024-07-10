@@ -162,7 +162,7 @@ namespace Calculator_Pro
 
         private void button7_Click(object sender, EventArgs e)
         {
-            textBox_input.Text = textBox_input.Text += "7";
+            textBox_input.Text += "7";
         }
 
         private void button8_Click(object sender, EventArgs e)
