@@ -55,7 +55,7 @@ namespace Calculator_Pro
             string currentNum = "";
             foreach (char ch in arrCalc)
             {
-                if (char.IsDigit(ch) || ch == '.')
+                if (char.IsDigit(ch) || ch == '.' || (ch == '-' && currentNum == ""))
                 {
                     currentNum += ch;
                 }
@@ -114,11 +114,11 @@ namespace Calculator_Pro
         }
         private void button11_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox_output.Text))
+            if (string.IsNullOrEmpty(textBox_output.Text) && string.IsNullOrEmpty(textBox_input.Text))
             {
                 textBox_input.Text += "-";
             }
-            else
+            else if (!string.IsNullOrEmpty(textBox_input.Text) || !string.IsNullOrEmpty(textBox_input.Text))
             {
                 textBox_output.Text += textBox_input.Text + "-";
                 textBox_input.Text = "";
@@ -127,64 +127,46 @@ namespace Calculator_Pro
         private void button1_Click(object sender, EventArgs e)
         {
             textBox_input.Text += "1";
-            //double doubleNumber = double.Parse(textBox_input.Text);
-            //textBox_input.Text = doubleNumber.ToString("N2");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             textBox_input.Text += "2";
-            //double doubleNumber = double.Parse(textBox_input.Text);
-            //textBox_input.Text = doubleNumber.ToString("N2");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             textBox_input.Text += "3";
-            //double doubleNumber = double.Parse(textBox_input.Text);
-            //textBox_input.Text = doubleNumber.ToString("N2");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             textBox_input.Text += "4";
-            //double doubleNumber = double.Parse(textBox_input.Text);
-            //textBox_input.Text = doubleNumber.ToString("N2");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             textBox_input.Text += "5";
-            //double doubleNumber = double.Parse(textBox_input.Text);
-            //textBox_input.Text = doubleNumber.ToString("N2");
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             textBox_input.Text += "6";
-            //double doubleNumber = double.Parse(textBox_input.Text);
-            //textBox_input.Text = doubleNumber.ToString("N2");
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             textBox_input.Text = textBox_input.Text += "7";
-            //double doubleNumber = double.Parse(textBox_input.Text);
-            //textBox_input.Text = doubleNumber.ToString("N2");
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             textBox_input.Text += "8";
-            //double doubleNumber = double.Parse(textBox_input.Text);
-            //textBox_input.Text = doubleNumber.ToString("N2");
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             textBox_input.Text += "9";
-            //double doubleNumber = double.Parse(textBox_input.Text);
-            //textBox_input.Text = doubleNumber.ToString("N2");
         }
 
         private void button0_Click(object sender, EventArgs e)
@@ -196,8 +178,6 @@ namespace Calculator_Pro
             else
             {
                 textBox_input.Text += "0";
-                //double doubleNumber = double.Parse(textBox_input.Text);
-                //textBox_input.Text = doubleNumber.ToString("N2");
             }
 
         }
@@ -220,20 +200,30 @@ namespace Calculator_Pro
 
         private void button12_Click(object sender, EventArgs e)
         {
-            textBox_output.Text += textBox_input.Text+"¡¿";
-            textBox_input.Text = "";
+            if (!string.IsNullOrEmpty(textBox_input.Text))
+            {
+                textBox_output.Text += textBox_input.Text + "¡¿";
+                textBox_input.Text = "";
+            }
+
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            textBox_output.Text += textBox_input.Text+"¡À";
-            textBox_input.Text = "";
+            if (!string.IsNullOrEmpty(textBox_input.Text))
+            {
+                textBox_output.Text += textBox_input.Text+"¡À";
+                textBox_input.Text = "";
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            textBox_output.Text += textBox_input.Text + "%";
-            textBox_input.Text = "";
+            if (!string.IsNullOrEmpty(textBox_input.Text))
+            {
+                textBox_output.Text += textBox_input.Text + "%";
+                textBox_input.Text = "";
+            }
         }
 
         private void button17_Click(object sender, EventArgs e)
