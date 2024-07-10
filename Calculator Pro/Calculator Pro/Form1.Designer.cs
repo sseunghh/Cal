@@ -314,6 +314,8 @@
             this.textBox_input.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox_input.Font = new System.Drawing.Font("굴림", 20F);
             this.textBox_input.Location = new System.Drawing.Point(12, 69);
+            this.textBox_input.MaximumSize = new System.Drawing.Size(375, 50);
+            this.textBox_input.MaxLength = 20;
             this.textBox_input.MinimumSize = new System.Drawing.Size(375, 50);
             this.textBox_input.Name = "textBox_input";
             this.textBox_input.RightToLeft = System.Windows.Forms.RightToLeft.No;
