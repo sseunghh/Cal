@@ -39,78 +39,81 @@ namespace Calculator_Pro
 
         private void button15_Click(object sender, EventArgs e)
         {
-            textBox_output.Text += textBox_input.Text + " = ";
-            //strNumber = textBox_output.Text.Substring(0, textBox_output.Text.Length - 3); ;
-            //string[] arrStr = strNumber.Split();
-            //foreach(string arr in arrStr)
-            //{
-            //    list.Add(arr);
-            //}
-            //textBox_output.Text += result.ToString("N0");
-            //textBox_input.Text = result.ToString("N0");
-            string strCalc = textBox_output.Text.Substring(0, textBox_output.Text.Length - 3); // 이거
-            char[] arrCalc = strCalc.ToCharArray();
-            List<double> arrNum = new List<double>();
-            List<char> arrOp = new List<char>();
-            string currentNum = "";
-            foreach (char ch in arrCalc)
+            if (!string.IsNullOrEmpty(textBox_input.Text))
             {
-                if (char.IsDigit(ch) || ch == '.' || (ch == '-' && currentNum == ""))
+                textBox_output.Text += textBox_input.Text + " = ";
+                //strNumber = textBox_output.Text.Substring(0, textBox_output.Text.Length - 3); ;
+                //string[] arrStr = strNumber.Split();
+                //foreach(string arr in arrStr)
+                //{
+                //    list.Add(arr);
+                //}
+                //textBox_output.Text += result.ToString("N0");
+                //textBox_input.Text = result.ToString("N0");
+                string strCalc = textBox_output.Text.Substring(0, textBox_output.Text.Length - 3); // 이거
+                char[] arrCalc = strCalc.ToCharArray();
+                List<double> arrNum = new List<double>();
+                List<char> arrOp = new List<char>();
+                string currentNum = "";
+                foreach (char ch in arrCalc)
                 {
-                    currentNum += ch;
-                }
-                else
-                {
-                    if (!string.IsNullOrEmpty(currentNum))
+                    if (char.IsDigit(ch) || ch == '.' || (ch == '-' && currentNum == ""))
                     {
-                        arrNum.Add(double.Parse(currentNum));
-                        currentNum = "";
+                        currentNum += ch;
                     }
-                    arrOp.Add(ch);
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(currentNum))
+                        {
+                            arrNum.Add(double.Parse(currentNum));
+                            currentNum = "";
+                        }
+                        arrOp.Add(ch);
+                    }
                 }
-            }
-            if (!string.IsNullOrEmpty(currentNum))
-            {
-                arrNum.Add(double.Parse(currentNum));
-            }
-            // Perform the calculation with operator precedence
-            for (int i = 0; i < arrOp.Count; i++)
-            {
-                if (arrOp[i] == '×' || arrOp[i] == '÷')
+                if (!string.IsNullOrEmpty(currentNum))
                 {
-                    double tempResult = arrNum[i];
+                    arrNum.Add(double.Parse(currentNum));
+                }
+                // Perform the calculation with operator precedence
+                for (int i = 0; i < arrOp.Count; i++)
+                {
+                    if (arrOp[i] == '×' || arrOp[i] == '÷')
+                    {
+                        double tempResult = arrNum[i];
+                        switch (arrOp[i])
+                        {
+                            case '×':
+                                tempResult *= arrNum[i + 1];
+                                break;
+                            case '÷':
+                                tempResult /= arrNum[i + 1];
+                                break;
+                        }
+                        arrNum[i] = tempResult;
+                        arrNum.RemoveAt(i + 1);
+                        arrOp.RemoveAt(i);
+                        i--;
+                    }
+                }
+                double result = arrNum[0];
+                for (int i = 0; i < arrOp.Count; i++)
+                {
                     switch (arrOp[i])
                     {
-                        case '×':
-                            tempResult *= arrNum[i + 1];
+                        case '+':
+                            result += arrNum[i + 1];
                             break;
-                        case '÷':
-                            tempResult /= arrNum[i + 1];
+                        case '-':
+                            result -= arrNum[i + 1];
                             break;
                     }
-                    arrNum[i] = tempResult;
-                    arrNum.RemoveAt(i + 1);
-                    arrOp.RemoveAt(i);
-                    i--;
                 }
+                // textBox_output.Text += result.ToString("N10").TrimEnd('0').TrimEnd('.');
+                textBox_input.Text = result.ToString("N10").TrimEnd('0').TrimEnd('.');
+                string historyEntry = $"{strCalc} = {result}";
+                history.AddHistory(historyEntry);
             }
-            double result = arrNum[0];
-            for (int i = 0; i < arrOp.Count; i++)
-            {
-                switch (arrOp[i])
-                {
-                    case '+':
-                        result += arrNum[i + 1];
-                        break;
-                    case '-':
-                        result -= arrNum[i + 1];
-                        break;
-                }
-            }
-            // textBox_output.Text += result.ToString("N10").TrimEnd('0').TrimEnd('.');
-            textBox_input.Text = result.ToString("N10").TrimEnd('0').TrimEnd('.');
-            string historyEntry = $"{strCalc} = {result}";
-            history.AddHistory(historyEntry);
         }
         private void button11_Click(object sender, EventArgs e)
         {
@@ -118,7 +121,7 @@ namespace Calculator_Pro
             {
                 textBox_input.Text += "-";
             }
-            else if (!string.IsNullOrEmpty(textBox_input.Text) || !string.IsNullOrEmpty(textBox_input.Text))
+            else if (!string.IsNullOrEmpty(textBox_input.Text))
             {
                 textBox_output.Text += textBox_input.Text + "-";
                 textBox_input.Text = "";
