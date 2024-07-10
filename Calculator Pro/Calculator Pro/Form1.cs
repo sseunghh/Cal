@@ -111,7 +111,7 @@ namespace Calculator_Pro
                 }
             }
 
-            textBox_input.Text = result.ToString("N0");
+            textBox_input.Text = result.ToString("N2");
             string historyEntry = $"{strCalc} = {result}";
             history.AddHistory(historyEntry);
         }
