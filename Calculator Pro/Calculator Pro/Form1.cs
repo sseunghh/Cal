@@ -98,7 +98,7 @@ namespace Calculator_Pro
                         arrOp.RemoveAt(i);
                         i--;
                     }
-                }
+                }    // 변동사항
                 double result = arrNum[0];
                 for (int i = 0; i < arrOp.Count; i++)
                 {
