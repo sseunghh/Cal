@@ -36,11 +36,12 @@
             // 
             this.listBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox.FormattingEnabled = true;
+            this.listBox.HorizontalScrollbar = true;
             this.listBox.ItemHeight = 15;
             this.listBox.Location = new System.Drawing.Point(14, 58);
             this.listBox.Name = "listBox";
             this.listBox.ScrollAlwaysVisible = true;
-            this.listBox.Size = new System.Drawing.Size(223, 270);
+            this.listBox.Size = new System.Drawing.Size(223, 120);
             this.listBox.TabIndex = 0;
             // 
             // label1
@@ -58,7 +59,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(252, 353);
+            this.ClientSize = new System.Drawing.Size(252, 198);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox);
             this.Name = "Form2";
