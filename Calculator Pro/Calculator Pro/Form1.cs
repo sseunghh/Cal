@@ -260,8 +260,10 @@ namespace Calculator_Pro
 
         private void button16_Click(object sender, EventArgs e)
         {
+            Form2 form2 = new Form2();
+            form2.Show();
             string historyOutput = history.AllHistory();
-            MessageBox.Show(historyOutput, "History");
+            // MessageBox.Show(historyOutput, "History");
         }
 
     }

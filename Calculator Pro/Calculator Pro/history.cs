@@ -10,10 +10,12 @@ namespace Calculator_Pro
         private List<string> historyList = new List<string>();
         public void AddHistory(string history)
         {
+            /*
             if (historyList.Count >= 5)
             {
                 historyList.RemoveAt(0);
             }
+            */
             historyList.Add(history);
         }
         public string AllHistory()
