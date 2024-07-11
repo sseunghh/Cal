@@ -36,7 +36,6 @@
             // 
             this.listBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox.FormattingEnabled = true;
-            this.listBox.HorizontalScrollbar = true;
             this.listBox.ItemHeight = 15;
             this.listBox.Location = new System.Drawing.Point(14, 58);
             this.listBox.Name = "listBox";
