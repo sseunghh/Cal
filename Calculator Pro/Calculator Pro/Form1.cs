@@ -241,10 +241,6 @@ namespace Calculator_Pro
 
         }
 
-        private void textBox_output_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button19_Click(object sender, EventArgs e)
         {
@@ -278,8 +274,11 @@ namespace Calculator_Pro
 
         private void button14_Click(object sender, EventArgs e)
         {
-            textBox_output.Text += textBox_input.Text + "%";
-            textBox_input.Text = "";
+            if (!string.IsNullOrEmpty(textBox_input.Text))
+            {
+                textBox_output.Text += textBox_input.Text + "%";
+                textBox_input.Text = "";
+            }
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -300,8 +299,10 @@ namespace Calculator_Pro
 
         private void button16_Click(object sender, EventArgs e)
         {
+            Form2 form2 = new Form2();
+            form2.Show();
             string historyOutput = history.AllHistory();
-            MessageBox.Show(historyOutput, "History");
+            // MessageBox.Show(historyOutput, "History");
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
