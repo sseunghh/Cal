@@ -50,6 +50,7 @@
             this.button19 = new System.Windows.Forms.Button();
             this.textBox_output = new System.Windows.Forms.TextBox();
             this.textBox_input = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // button1
@@ -353,6 +354,8 @@
             this.Controls.Add(this.textBox_input);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,6 +384,7 @@
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.TextBox textBox_output;
         private System.Windows.Forms.TextBox textBox_input;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

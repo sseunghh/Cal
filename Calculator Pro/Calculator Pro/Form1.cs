@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -20,8 +21,8 @@ namespace Calculator_Pro
         string strNumber = "";
         List<string> list = new List<string>();
         double result = 0;
-
         private History history = new History();
+        
 
         private void Clicknum(string num)
         {
@@ -34,6 +35,7 @@ namespace Calculator_Pro
             {
                 textBox_input.Text += num;
             }
+            
         }
 
 
@@ -41,6 +43,8 @@ namespace Calculator_Pro
         public Form1()
         {
             InitializeComponent();
+
+            
         }
  
 
@@ -68,6 +72,7 @@ namespace Calculator_Pro
                 char[] arrCalc = strCalc.ToCharArray();
                 List<double> arrNum = new List<double>();
                 List<char> arrOp = new List<char>();
+
                 string currentNum = "";
                 foreach (char ch in arrCalc)
                 {
@@ -143,6 +148,7 @@ namespace Calculator_Pro
                 textBox_output.Text += textBox_input.Text + "-";
                 textBox_input.Text = "";
             }
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -266,5 +272,32 @@ namespace Calculator_Pro
             form2.Show();
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            StreamWriter writer;
+            writer = File.CreateText("writeTest.txt");        
+                                                              
+            writer.WriteLine(history.AllHistory());    
+            writer.Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var filePath = "writeTest.txt";
+            if (File.Exists(filePath))
+            {
+                //파일을 사용한 후 닫아주기위해 using으로 묶어준다.
+                using (var reader = new StreamReader(filePath, Encoding.UTF8))
+                {
+                    //파일의 마지막까지 읽어 들였는지를 EndOfStream 속성을 보고 조사
+                    while (!reader.EndOfStream)
+                    {
+                        //ReadLine 메서드로 한 행을 읽어 들여 line 변수에 대입
+                        var line = reader.ReadLine();
+                        history.AddHistory(line);
+                    }
+                }
+            }
+        }
     }
 }
