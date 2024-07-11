@@ -30,6 +30,10 @@ namespace Calculator_Pro
                 textBox_output.Text = "";
                 textBox_input.Text = num;
             }
+            else if (textBox_input.Text == "0")
+                {
+                textBox_input.Text = num;
+            }
             else
             {
                 textBox_input.Text += num;
@@ -191,20 +195,7 @@ namespace Calculator_Pro
 
         private void button0_Click(object sender, EventArgs e)
         {
-            if (textBox_input.Text == String.Empty)
-            {
-                textBox_input.Text = "";
-            }
-            else if (textBox_output.Text.Contains("="))
-            {
-                textBox_input.Text = textBox_input.Text;
-                textBox_output.Text = textBox_output.Text;
-            }
-            else
-            {
-                Clicknum("0");
-            }
-
+            Clicknum("0");
         }
 
 
@@ -270,6 +261,5 @@ namespace Calculator_Pro
             form2.AddHistory(historyOutput);
             form2.Show();
         }
-
     }
 }
