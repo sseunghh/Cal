@@ -32,6 +32,10 @@ namespace Calculator_Pro
             // 기본 설정은 10진수
             radioButton2.Checked = true;
             textBox_input.Text = "";
+
+            radioButton1.Enabled = false;
+            radioButton2.Enabled = false;
+            radioButton3.Enabled = false;
         }
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
@@ -72,6 +76,9 @@ namespace Calculator_Pro
             if (textBox_output.Text.Contains("="))
             {
                 textBox_output.Text = "";
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
                 textBox_input.Text = num;
             }
             else if (textBox_input.Text == "0")
@@ -171,6 +178,10 @@ namespace Calculator_Pro
                 textBox_input.Text = result.ToString("N10").TrimEnd('0').TrimEnd('.');
                 string historyEntry = $"{strCalc} = {result}";
                 history.AddHistory(historyEntry);
+
+                radioButton1.Enabled = true;
+                radioButton2.Enabled = true;
+                radioButton3.Enabled = true;
             }
         }
 
