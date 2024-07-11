@@ -267,9 +267,9 @@ namespace Calculator_Pro
         private void button16_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
-            form2.Show();
             string historyOutput = history.AllHistory();
-            // MessageBox.Show(historyOutput, "History");
+            form2.AddHistory(historyOutput);
+            form2.Show();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

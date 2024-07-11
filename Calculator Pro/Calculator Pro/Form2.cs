@@ -15,6 +15,20 @@ namespace Calculator_Pro
         public Form2()
         {
             InitializeComponent();
+
+        }
+
+        public void AddHistory(string historyOutput)
+        {
+            listBox.Items.Clear();
+            string[] historyEntries = historyOutput.Split(new[] { '\n' }, StringSplitOptions.None);
+            foreach (var entry in historyEntries)
+            {
+                if (!string.IsNullOrWhiteSpace(entry))
+                {
+                    listBox.Items.Add(entry.Trim());
+                }
+            }
         }
 
     }
