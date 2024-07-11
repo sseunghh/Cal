@@ -280,5 +280,24 @@ namespace Calculator_Pro
             writer.WriteLine(history.AllHistory());    
             writer.Close();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var filePath = "writeTest.txt";
+            if (File.Exists(filePath))
+            {
+                //파일을 사용한 후 닫아주기위해 using으로 묶어준다.
+                using (var reader = new StreamReader(filePath, Encoding.UTF8))
+                {
+                    //파일의 마지막까지 읽어 들였는지를 EndOfStream 속성을 보고 조사
+                    while (!reader.EndOfStream)
+                    {
+                        //ReadLine 메서드로 한 행을 읽어 들여 line 변수에 대입
+                        var line = reader.ReadLine();
+                        history.AddHistory(line);
+                    }
+                }
+            }
+        }
     }
 }
