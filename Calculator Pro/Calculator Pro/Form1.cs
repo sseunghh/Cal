@@ -21,8 +21,8 @@ namespace Calculator_Pro
         string strNumber = "";
         List<string> list = new List<string>();
         double result = 0;
-
         private History history = new History();
+        
 
         private void Clicknum(string num)
         {
@@ -35,6 +35,7 @@ namespace Calculator_Pro
             {
                 textBox_input.Text += num;
             }
+            
         }
 
 
@@ -42,6 +43,8 @@ namespace Calculator_Pro
         public Form1()
         {
             InitializeComponent();
+
+            
         }
  
 
@@ -69,6 +72,7 @@ namespace Calculator_Pro
                 char[] arrCalc = strCalc.ToCharArray();
                 List<double> arrNum = new List<double>();
                 List<char> arrOp = new List<char>();
+
                 string currentNum = "";
                 foreach (char ch in arrCalc)
                 {
@@ -266,6 +270,15 @@ namespace Calculator_Pro
             form2.Show();
             string historyOutput = history.AllHistory();
             // MessageBox.Show(historyOutput, "History");
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            StreamWriter writer;
+            writer = File.CreateText("writeTest.txt");        
+                                                              
+            writer.WriteLine(history.AllHistory());    
+            writer.Close();
         }
     }
 }
