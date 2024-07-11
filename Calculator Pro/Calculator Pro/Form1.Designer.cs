@@ -50,6 +50,9 @@
             this.button19 = new System.Windows.Forms.Button();
             this.textBox_output = new System.Windows.Forms.TextBox();
             this.textBox_input = new System.Windows.Forms.TextBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // button1
@@ -62,7 +65,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // button2
             // 
@@ -74,7 +77,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // button3
             // 
@@ -86,7 +89,6 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -98,7 +100,6 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -110,7 +111,6 @@
             this.button5.TabIndex = 5;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -122,7 +122,6 @@
             this.button6.TabIndex = 6;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -134,7 +133,6 @@
             this.button7.TabIndex = 7;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -146,7 +144,6 @@
             this.button8.TabIndex = 8;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -158,7 +155,6 @@
             this.button9.TabIndex = 9;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button0
             // 
@@ -170,7 +166,6 @@
             this.button0.TabIndex = 10;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = false;
-            this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
             // button10
             // 
@@ -182,7 +177,6 @@
             this.button10.TabIndex = 12;
             this.button10.Text = "+";
             this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -194,7 +188,6 @@
             this.button11.TabIndex = 13;
             this.button11.Text = "-";
             this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -206,7 +199,6 @@
             this.button12.TabIndex = 14;
             this.button12.Text = "×";
             this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -218,7 +210,6 @@
             this.button13.TabIndex = 15;
             this.button13.Text = "÷";
             this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -230,7 +221,6 @@
             this.button14.TabIndex = 16;
             this.button14.Text = "%";
             this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button15
             // 
@@ -242,7 +232,6 @@
             this.button15.TabIndex = 17;
             this.button15.Text = "=";
             this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button16
             // 
@@ -254,7 +243,6 @@
             this.button16.TabIndex = 18;
             this.button16.Text = "🧾";
             this.button16.UseVisualStyleBackColor = false;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button17
             // 
@@ -266,7 +254,6 @@
             this.button17.TabIndex = 19;
             this.button17.Text = "<";
             this.button17.UseVisualStyleBackColor = false;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // button18
             // 
@@ -278,7 +265,6 @@
             this.button18.TabIndex = 20;
             this.button18.Text = "C";
             this.button18.UseVisualStyleBackColor = false;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button19
             // 
@@ -290,7 +276,6 @@
             this.button19.TabIndex = 21;
             this.button19.Text = ".";
             this.button19.UseVisualStyleBackColor = false;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // textBox_output
             // 
@@ -323,12 +308,48 @@
             this.textBox_input.TabIndex = 0;
             this.textBox_input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(12, -1);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(66, 19);
+            this.radioButton1.TabIndex = 22;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "2진수";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(88, -1);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(74, 19);
+            this.radioButton2.TabIndex = 23;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "10진수";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(168, -1);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(74, 19);
+            this.radioButton3.TabIndex = 24;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "16진수";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(399, 444);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
@@ -381,6 +402,9 @@
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.TextBox textBox_output;
         private System.Windows.Forms.TextBox textBox_input;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
     }
 }
 

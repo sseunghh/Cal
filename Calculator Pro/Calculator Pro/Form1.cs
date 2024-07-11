@@ -35,16 +35,41 @@ namespace Calculator_Pro
                 textBox_input.Text += num;
             }
         }
-
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (double.TryParse(textBox_input.Text, out double result))
+            {
+                if (radioButton1.Checked) // 2진수
+                {
+                    textBox_input.Text = Convert.ToString((int)result, 2);
+                }
+                else if (radioButton2.Checked) // 10진수
+                {
+                    textBox_input.Text = result.ToString();
+                }
+                else if (radioButton3.Checked) // 16진수
+                {
+                    textBox_input.Text = Convert.ToString((int)result, 16).ToUpper();
+                }
+            }
+            else
+            {
+                MessageBox.Show("유효한 숫자가 아닙니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
 
         public Form1()
         {
             InitializeComponent();
+            radioButton1.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
+            radioButton2.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
+            radioButton3.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
         }
- 
+    }
 
-        private void button10_Click(object sender, EventArgs e)
+
+    private void button10_Click(object sender, EventArgs e)
         {
             textBox_output.Text += textBox_input.Text + "+";
             textBox_input.Text = "";
@@ -116,15 +141,15 @@ namespace Calculator_Pro
                         arrOp.RemoveAt(i);
                         i--;
                     }
-<<<<<<< HEAD
+
 
                 }
 
-                }    // 변동사항
+                    // 변동사항
 
-=======
-                }
->>>>>>> main
+
+                
+
                 double result = arrNum[0];
                 for (int i = 0; i < arrOp.Count; i++)
                 {
@@ -188,11 +213,9 @@ namespace Calculator_Pro
 
         private void button7_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            textBox_input.Text = textBox_input.Text += "7";
-=======
+
             Clicknum("7");
->>>>>>> main
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -281,5 +304,19 @@ namespace Calculator_Pro
             MessageBox.Show(historyOutput, "History");
         }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
