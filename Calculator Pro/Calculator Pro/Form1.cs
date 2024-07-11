@@ -66,6 +66,7 @@ namespace Calculator_Pro
             }
         }
 
+
         private void Clicknum(string num)
         {
             if (textBox_output.Text.Contains("="))
@@ -121,7 +122,9 @@ namespace Calculator_Pro
                 // 연산자 우선순위에 따라 계산 수행
                 for (int i = 0; i < arrOp.Count; i++)
                 {
+
                     if (arrOp[i] == '×' || arrOp[i] == '÷' || arrOp[i] == '%')
+
                     {
                         double tempResult = arrNum[i];
                         switch (arrOp[i])
@@ -132,15 +135,19 @@ namespace Calculator_Pro
                             case '÷':
                                 tempResult /= arrNum[i + 1];
                                 break;
+
                             case '%':
                                 tempResult %= arrNum[i + 1];
                                 break;
+
                         }
                         arrNum[i] = tempResult;
                         arrNum.RemoveAt(i + 1);
                         arrOp.RemoveAt(i);
                         i--;
                     }
+
+
                 }
 
                 result = arrNum[0]; // 결과를 result 변수에 저장
@@ -209,7 +216,9 @@ namespace Calculator_Pro
 
         private void button7_Click(object sender, EventArgs e)
         {
+
             Clicknum("7");
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -314,6 +323,11 @@ namespace Calculator_Pro
                     }
                 }
             }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

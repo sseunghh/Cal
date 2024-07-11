@@ -178,7 +178,7 @@
             this.button0.TabIndex = 10;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = false;
-            this.button0.Click += new System.EventHandler(this.button0_Click);
+            this.button0.Click += new System.EventHandler(this.button10_Click);
             // 
             // button10
             // 
@@ -341,6 +341,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "2진수";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.Click += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -352,6 +353,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "10진수";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.Click += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -363,6 +365,8 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "16진수";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.radioButton3.Click += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // Form1
             // 
@@ -428,6 +432,7 @@
         private System.Windows.Forms.TextBox textBox_output;
         private System.Windows.Forms.TextBox textBox_input;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+    
     }
 }
 
