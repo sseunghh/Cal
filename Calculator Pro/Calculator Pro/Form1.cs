@@ -195,6 +195,11 @@ namespace Calculator_Pro
             {
                 textBox_input.Text = "";
             }
+            else if (textBox_output.Text.Contains("="))
+            {
+                textBox_input.Text = textBox_input.Text;
+                textBox_output.Text = textBox_output.Text;
+            }
             else
             {
                 Clicknum("0");
