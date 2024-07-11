@@ -74,6 +74,10 @@ namespace Calculator_Pro
                 textBox_output.Text = "";
                 textBox_input.Text = num;
             }
+            else if (textBox_input.Text == "0")
+                {
+                textBox_input.Text = num;
+            }
             else
             {
                 textBox_input.Text += num;
@@ -286,7 +290,7 @@ namespace Calculator_Pro
         private void button18_Click(object sender, EventArgs e)
         {
             textBox_input.Text = "";
-            textBox_output.Text = "";
+            textBox_output.Text = ""; //
         }
 
         private void button16_Click(object sender, EventArgs e)
