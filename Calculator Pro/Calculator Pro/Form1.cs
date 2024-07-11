@@ -31,21 +31,38 @@ namespace Calculator_Pro
 
             // 기본 설정은 10진수
             radioButton2.Checked = true;
+            textBox_input.Text = "";
         }
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
             {
-                textBox_input.Text = Convert.ToString((int)result, 2);
+                if (result >= 0)
+                {
+                    textBox_input.Text = Convert.ToString((int)result, 2);
+                }
+                else
+                {
+                    MessageBox.Show("음수는 2진수로 변환할 수 없습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    radioButton2.Checked = true; // 10진수 선택으로 변경
+                }
             }
             else if (radioButton2.Checked)
             {
-                textBox_input.Text = result.ToString();
+                textBox_input.Text = result != 0 ? result.ToString() : "";
             }
             else if (radioButton3.Checked)
             {
-                textBox_input.Text = Convert.ToString((int)result, 16).ToUpper();
+                if (result >= 0)
+                {
+                    textBox_input.Text = Convert.ToString((int)result, 16).ToUpper();
+                }
+                else
+                {
+                    MessageBox.Show("음수는 16진수로 변환할 수 없습니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    radioButton2.Checked = true; // 10진수 선택으로 변경
+                }
             }
         }
 
