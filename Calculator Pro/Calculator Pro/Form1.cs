@@ -290,7 +290,7 @@ namespace Calculator_Pro
         private void button18_Click(object sender, EventArgs e)
         {
             textBox_input.Text = "";
-            textBox_output.Text = "";
+            textBox_output.Text = ""; //
         }
 
         private void button16_Click(object sender, EventArgs e)
