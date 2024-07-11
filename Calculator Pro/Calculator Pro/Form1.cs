@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -143,6 +144,7 @@ namespace Calculator_Pro
                 textBox_output.Text += textBox_input.Text + "-";
                 textBox_input.Text = "";
             }
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -264,6 +266,5 @@ namespace Calculator_Pro
             string historyOutput = history.AllHistory();
             MessageBox.Show(historyOutput, "History");
         }
-
     }
 }

@@ -50,6 +50,7 @@
             this.button19 = new System.Windows.Forms.Button();
             this.textBox_output = new System.Windows.Forms.TextBox();
             this.textBox_input = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // button1
@@ -381,6 +382,7 @@
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.TextBox textBox_output;
         private System.Windows.Forms.TextBox textBox_input;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
