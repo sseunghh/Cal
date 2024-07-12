@@ -177,7 +177,7 @@
             this.button0.TabIndex = 10;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = false;
-            this.button0.Click += new System.EventHandler(this.button10_Click);
+            this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
             // button10
             // 
@@ -326,7 +326,7 @@
             this.textBox_input.MinimumSize = new System.Drawing.Size(375, 50);
             this.textBox_input.Name = "textBox_input";
             this.textBox_input.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox_input.Size = new System.Drawing.Size(375, 50);
+            this.textBox_input.Size = new System.Drawing.Size(375, 39);
             this.textBox_input.TabIndex = 0;
             this.textBox_input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -364,7 +364,6 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "16진수";
             this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             this.radioButton3.Click += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // Form1
