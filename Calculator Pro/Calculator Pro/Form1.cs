@@ -133,50 +133,9 @@ namespace Calculator_Pro
                     arrNum.Add(double.Parse(currentNum));
                 }
 
-                // 연산자 우선순위에 따라 계산 수행
-                for (int i = 0; i < arrOp.Count; i++)
-                {
-
-                    if (arrOp[i] == '×' || arrOp[i] == '÷' || arrOp[i] == '%')
-
-                    {
-                        double tempResult = arrNum[i];
-                        switch (arrOp[i])
-                        {
-                            case '×':
-                                tempResult *= arrNum[i + 1];
-                                break;
-                            case '÷':
-                                tempResult /= arrNum[i + 1];
-                                break;
-
-                            case '%':
-                                tempResult %= arrNum[i + 1];
-                                break;
-
-                        }
-                        arrNum[i] = tempResult;
-                        arrNum.RemoveAt(i + 1);
-                        arrOp.RemoveAt(i);
-                        i--;
-                    }
-
-
-                }
-
-                result = arrNum[0]; // 결과를 result 변수에 저장
-                for (int i = 0; i < arrOp.Count; i++)
-                {
-                    switch (arrOp[i])
-                    {
-                        case '+':
-                            result += arrNum[i + 1];
-                            break;
-                        case '-':
-                            result -= arrNum[i + 1];
-                            break;
-                    }
-                }
+                // Calculator 클래스 인스턴스 생성 및 계산 메서드 호출
+                Calculator calculator = new Calculator();
+                result = calculator.Calculate(arrNum, arrOp);
 
                 textBox_input.Text = result.ToString("N10").TrimEnd('0').TrimEnd('.');
                 string historyEntry = $"{strCalc} = {result}";
