@@ -199,7 +199,7 @@ namespace Calculator_Pro
             {
                 textBox_input.Text += "-";
             }
-            else if (!string.IsNullOrEmpty(textBox_input.Text))
+            else if (!string.IsNullOrEmpty(textBox_input.Text) && !textBox_input.Text.Contains("-"))
             {
                 textBox_output.Text += textBox_input.Text + "-";
                 textBox_input.Text = "";
