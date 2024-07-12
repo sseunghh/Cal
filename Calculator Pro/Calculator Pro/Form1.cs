@@ -104,10 +104,10 @@ namespace Calculator_Pro
 
         private void button15_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox_input.Text))
+            if (!string.IsNullOrEmpty(textBox_input.Text)|| char.IsDigit(textBox_output.Text[textBox_output.Text.Length - 1]))
             {
-                textBox_output.Text += textBox_input.Text + " = ";
-                string strCalc = textBox_output.Text.Substring(0, textBox_output.Text.Length - 3);
+                textBox_output.Text += textBox_input.Text + "=";
+                string strCalc = textBox_output.Text.Substring(0, textBox_output.Text.Length - 1);
                 char[] arrCalc = strCalc.ToCharArray();
                 List<double> arrNum = new List<double>();
                 List<char> arrOp = new List<char>();
@@ -251,11 +251,16 @@ namespace Calculator_Pro
 
             if (!string.IsNullOrEmpty(textBox_input.Text))
             {
-                textBox_input.Text = textBox_input.Text.Substring(0, textBox_input.Text.Length - 1);
+                string check = textBox_input.Text.ToString();
+                textBox_input.Text = check.Substring(0, check.Length - 1);
+                radioButton1.Enabled = false;
+                radioButton2.Enabled = false;
+                radioButton3.Enabled = false;
+                radioButton2.Checked = true;
             }
             else if (!string.IsNullOrEmpty(textBox_output.Text))
             {
-                textBox_output.Text = editor.RemoveAfterEquals(textBox_output.Text);
+                textBox_output.Text = textBox_output.Text.Substring(0, textBox_output.Text.Length - 1);
             }
         }
 
