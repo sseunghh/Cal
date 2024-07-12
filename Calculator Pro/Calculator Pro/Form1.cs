@@ -92,10 +92,13 @@ namespace Calculator_Pro
             
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void Clickop(string op)
         {
-            textBox_output.Text += textBox_input.Text + "+";
-            textBox_input.Text = "";
+            if (!string.IsNullOrEmpty(textBox_input.Text) && !textBox_output.Text.Contains("="))
+            {
+                textBox_output.Text += textBox_input.Text + op;
+                textBox_input.Text = "";
+            }
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -185,6 +188,11 @@ namespace Calculator_Pro
             }
         }
 
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Clickop("+");
+        }
+
         private void button11_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox_output.Text) && string.IsNullOrEmpty(textBox_input.Text))
@@ -264,29 +272,17 @@ namespace Calculator_Pro
 
         private void button12_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox_input.Text))
-            {
-                textBox_output.Text += textBox_input.Text + "¡¿";
-                textBox_input.Text = "";
-            }
+            Clickop("¡¿");
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox_input.Text))
-            {
-                textBox_output.Text += textBox_input.Text + "¡À";
-                textBox_input.Text = "";
-            }
+            Clickop("¡À");
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox_input.Text))
-            {
-                textBox_output.Text += textBox_input.Text + "%";
-                textBox_input.Text = "";
-            }
+            Clickop("%");
         }
 
         private void button17_Click(object sender, EventArgs e)
