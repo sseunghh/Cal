@@ -326,7 +326,7 @@
             this.textBox_input.MinimumSize = new System.Drawing.Size(375, 50);
             this.textBox_input.Name = "textBox_input";
             this.textBox_input.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox_input.Size = new System.Drawing.Size(375, 50);
+            this.textBox_input.Size = new System.Drawing.Size(375, 39);
             this.textBox_input.TabIndex = 0;
             this.textBox_input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 

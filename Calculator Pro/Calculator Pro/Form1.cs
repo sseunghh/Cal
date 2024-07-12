@@ -312,6 +312,7 @@ namespace Calculator_Pro
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Form2 form2 = new Form2();
             var filePath = "writeTest.txt";
             if (File.Exists(filePath))
             {
@@ -327,6 +328,10 @@ namespace Calculator_Pro
                     }
                 }
             }
+            string historyOutput = history.AllHistory();
+            form2.AddHistory(historyOutput);
+            form2.Owner = this;
+            form2.Show();
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
