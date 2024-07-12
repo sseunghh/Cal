@@ -30,6 +30,7 @@
         {
             this.listBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button_clear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox
@@ -53,12 +54,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "계산내역";
             // 
+            // button_clear
+            // 
+            this.button_clear.Location = new System.Drawing.Point(169, 20);
+            this.button_clear.Name = "button_clear";
+            this.button_clear.Size = new System.Drawing.Size(65, 23);
+            this.button_clear.TabIndex = 2;
+            this.button_clear.Text = "Clear";
+            this.button_clear.UseVisualStyleBackColor = true;
+            this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(252, 198);
+            this.Controls.Add(this.button_clear);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox);
             this.Name = "Form2";
@@ -72,5 +84,6 @@
 
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_clear;
     }
 }
