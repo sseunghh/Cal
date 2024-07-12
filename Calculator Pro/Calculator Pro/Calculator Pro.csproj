@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="Remove.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>

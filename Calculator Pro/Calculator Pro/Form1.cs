@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using static Calculator_Pro.Form1;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Calculator_Pro
 {
@@ -246,10 +247,15 @@ namespace Calculator_Pro
 
         private void button17_Click(object sender, EventArgs e)
         {
+            Remove editor = new Remove();
+
             if (!string.IsNullOrEmpty(textBox_input.Text))
             {
-                string check = textBox_input.Text.ToString();
-                textBox_input.Text = check.Substring(0, check.Length - 1);
+                textBox_input.Text = textBox_input.Text.Substring(0, textBox_input.Text.Length - 1);
+            }
+            else if (!string.IsNullOrEmpty(textBox_output.Text))
+            {
+                textBox_output.Text = editor.RemoveAfterEquals(textBox_output.Text);
             }
         }
 
